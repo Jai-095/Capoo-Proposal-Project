@@ -34,24 +34,22 @@ Installation
 
 git clone https://github.com/your-username/our-cute-moments.git
 
-
 2. Navigate to the project folder:
 
 cd our-cute-moments
-
 
 3. Open index.html in your browser.
 
 📂 Project Structure
 our-cute-moments/
 ├── assets/
-│   ├── images/   # Gallery images
-│   ├── videos/   # Video files
-│   └── sounds/   # Optional audio files
-├── index.html    # Main gallery page
-├── style.css     # Styles and animations
-├── script.js     # Lightbox and interactions
-└── README.md     # Project documentation
+│ ├── images/ # Gallery images
+│ ├── videos/ # Video files
+│ └── sounds/ # Optional audio files
+├── index.html # Main gallery page
+├── style.css # Styles and animations
+├── script.js # Lightbox and interactions
+└── README.md # Project documentation
 
 📌 Customization
 
