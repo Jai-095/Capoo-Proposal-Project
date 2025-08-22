@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Big Question</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #fff5f5;
+      font-family: 'Indie Flower', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #ffebee;
+      padding: 40px;
+      border-radius: 20px;
+      border: 3px solid #ff6b81;
+      box-shadow: 0 8px 20px rgba(255, 107, 129, 0.3);
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .header_text {
+      font-size: 32px;
+      color: #ff6b81;
+      margin-bottom: 20px;
+    }
+
+    .gif_container img {
+      width: 220px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      font-size: 20px;
+      border: 2px solid #ff6b81;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: #ff6b81;
+      color: white;
+      font-family: 'Indie Flower', cursive;
+      box-shadow: 0 4px 10px rgba(255, 107, 129, 0.3);
+    }
+
+    .btn:hover {
+      background-color: white;
+      color: #ff6b81;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255, 107, 129, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="header_text">Will you be my girlfriend? 💌</h1>
+    <div class="gif_container">
+      <img src="https://media.tenor.com/efbi1EpFlVUAAAAi/bugcat-capoo.gif" alt="Capoo Proposal">
+    </div>
+    <div class="buttons">
+      <button class="btn" onclick="goToLovePage()">Yes</button>
+      <button class="btn" onclick="goToNoPage()">No</button>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="https://cdn.pixabay.com/audio/2022/03/15/audio_bf6dc49b53.mp3" loop></audio>
+
+  <script>
+    function goToLovePage() {
+      window.location.href = "i_love_you.html";
+    }
+
+    function goToNoPage() {
+      window.location.href = "no.html";
+    }
+
+    document.addEventListener("click", () => {
+      const music = document.getElementById("bgMusic");
+      music.play().catch(e => console.log("Autoplay blocked:", e));
+    }, { once: true });
+  </script>
+</body>
+</html>

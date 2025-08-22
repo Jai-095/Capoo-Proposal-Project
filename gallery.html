@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Our Cute Moments 💕</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 30px;
+      background-color: #fff5f5;
+      font-family: 'Indie Flower', cursive;
+      animation: fadeInBody 1s ease-in;
+    }
+
+    @keyframes fadeInBody {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff6b81;
+      font-size: 42px;
+      margin-bottom: 30px;
+      animation: popIn 0.8s ease;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      padding: 0 20px;
+    }
+
+    .photo-card {
+      background-color: #ffeef0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #ff6b81;
+      box-shadow: 0 4px 10px rgba(255, 107, 129, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .photo-card:nth-child(1) {
+      animation-delay: 0.3s;
+    }
+
+    .photo-card:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+
+    .photo-card:nth-child(3) {
+      animation-delay: 0.9s;
+    }
+
+    .photo-card:nth-child(4) {
+      animation-delay: 1.2s;
+    }
+
+    @keyframes fadeInCard {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 250px;
+      /* fixed height for uniformity */
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-card img:hover {
+      transform: scale(1.03);
+    }
+
+    .caption {
+      padding: 10px;
+      font-family: 'Indie Flower', cursive;
+      text-align: center;
+      color: #ff6b81;
+      background-color: #fff5f5;
+    }
+
+
+    .photo-card video {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(255, 107, 129, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .photo-card video:hover {
+      transform: scale(1.03);
+    }
+
+
+    .photo-card:nth-child(1) .caption {
+      animation-delay: 0.5s;
+    }
+
+    .photo-card:nth-child(2) .caption {
+      animation-delay: 0.8s;
+    }
+
+    .photo-card:nth-child(3) .caption {
+      animation-delay: 1.1s;
+    }
+
+    .photo-card:nth-child(4) .caption {
+      animation-delay: 1.4s;
+    }
+
+    @keyframes fadeInText {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #ff6b81;
+      color: white;
+      font-family: 'Indie Flower', cursive;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: 2px solid #ff6b81;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 107, 129, 0.3);
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: white;
+      color: #ff6b81;
+    }
+
+    .fullscreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .fullscreen img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .fullscreen:active {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="back-btn" onclick="goBack()">⬅ Back</button>
+  <h1>Our Cute Moments 📸</h1>
+
+  <div class="gallery">
+
+    <div class="photo-card">
+      <img src="assets/images/Chota Don.jpg" alt="Cute moment 0" onclick="openFullscreen(this.src)">
+      <div class="caption">Mera Chota Don 💪🏻</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Our very first click together.jpg" alt="Cute moment 1" onclick="openFullscreen(this.src)">
+      <div class="caption">Our very first click together 📸</div>
+    </div>
+
+    <div class="photo-card">
+      <video src="assets/Videos/First Video.mp4" class="hover-video" loop preload="metadata" controls
+        onmouseover="this.play()" onmouseout="this.pause()"></video>
+      <div class="caption">Your First reel for me only 🎞️</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Just you and me .jpg
+  " alt="Cute moment 2" onclick="openFullscreen(this.src)">
+      <div class="caption">Just you and me 😉</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/When you smiled and stole my heart.jpg" alt="Cute moment 2"
+        onclick="openFullscreen(this.src)">
+      <div class="caption">When you smiled and stole my heart 😊</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/The way you looked that day.jpg" alt="Cute moment 3" onclick="openFullscreen(this.src)">
+      <div class="caption">The way you looked that day 🥰</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/The most adorable smile .jpg" alt="Cute moment 4" onclick="openFullscreen(this.src)">
+      <div class="caption">The most adorable smile 🥹</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/The Way of making yours.jpg" alt="Cute moment 5" onclick="openFullscreen(this.src)">
+      <div class="caption">The Way of making yours 🫠</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/Cuteness overloaded.jpg" alt="Cute moment 6" onclick="openFullscreen(this.src)">
+      <div class="caption">Cuteness overloaded 💖</div>
+    </div>
+
+    <div class="photo-card">
+      <video src="assets/Videos/The giggles we shared that day.mp4" class="hover-video" loop preload="metadata" controls
+        onmouseover="this.play()" onmouseout="this.pause()"></video>
+      <div class="caption">The giggles we shared that day 😄</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/You + Me.jpg" alt="Cute moment 8" onclick="openFullscreen(this.src)">
+      <div class="caption">You + Me = 💫</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/The innocent pout.jpg" alt="Cute moment 9" onclick="openFullscreen(this.src)">
+      <div class="caption">That innocent pout 🥺</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/Wrapped in joy.jpg" alt="Cute moment 10" onclick="openFullscreen(this.src)">
+      <div class="caption">Wrapped in joy 🧸</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/Unfiltered happiness.jpg" alt="Cute moment 11" onclick="openFullscreen(this.src)">
+      <div class="caption">Unfiltered happiness 🫶</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/The sunshine of my life.jpg" alt="Cute moment 12" onclick="openFullscreen(this.src)">
+      <div class="caption">The sunshine of my life 🌞</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/Every second with you is gold.jpg" alt="Cute moment 13"
+        onclick="openFullscreen(this.src)">
+      <div class="caption">Every second with you is gold 💛</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/Can we freeze this moment forever.jpg" alt="Cute moment 14"
+        onclick="openFullscreen(this.src)">
+      <div class="caption">Can we freeze this moment forever? ⏳</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/That sparkle in your eyes.jpg" alt="Cute moment 15" onclick="openFullscreen(this.src)">
+      <div class="caption">That sparkle in your eyes ✨</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/My favorite memory with you.jpg" alt="Cute moment 16" onclick="openFullscreen(this.src)">
+      <div class="caption">My favorite memory with you ❤️</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/Insta Trend Only for her.jpg" alt="Cute moment 29" onclick="openFullscreen(this.src)">
+      <div class="caption">Insta Trends only for her 💕</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/Your smile = My peace.jpg" alt="Cute moment 17" onclick="openFullscreen(this.src)">
+      <div class="caption">Your smile = My peace 😌</div>
+    </div>
+
+    <div class="photo-card">
+      <video src="assets/Videos/Can't forget that Hug.mp4" class="hover-video" loop preload="metadata" controls
+        onmouseover="this.play()" onmouseout="this.pause()"></video>
+      <div class="caption">Can't forget that Hug 🫂</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/So lucky to have you.jpg" alt="Cute moment 18" onclick="openFullscreen(this.src)">
+      <div class="caption">So lucky to have you 💫</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/Hugging you in my thoughts.jpg" alt="Cute moment 19" onclick="openFullscreen(this.src)">
+      <div class="caption">Hugging you in my thoughts 🤗</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/That moment, that love.jpg" alt="Cute moment 20" onclick="openFullscreen(this.src)">
+      <div class="caption">That moment, that love 💌</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/The cutest moment ever.jpg" alt="Cute moment 21" onclick="openFullscreen(this.src)">
+      <div class="caption">The cutest moment ever 💖</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/Caught in your charm.jpg" alt="Cute moment 22" onclick="openFullscreen(this.src)">
+      <div class="caption">Caught in your charm 🧲</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/Driver only for you.jpg" alt="Cute moment 29" onclick="openFullscreen(this.src)">
+      <div class="caption">Driver only for you 😊</div>
+    </div>
+    <div class="photo-card">
+      <img src="assets/images/Giggles that echo in my heart.jpg" alt="Cute moment 23"
+        onclick="openFullscreen(this.src)">
+      <div class="caption">Giggles that echo in my heart 💞</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Just us, being adorably us.jpg" alt="Cute moment 24" onclick="openFullscreen(this.src)">
+      <div class="caption">Just us, being adorably us 💑</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Moments like this, forever please.jpg" alt="Cute moment 25"
+        onclick="openFullscreen(this.src)">
+      <div class="caption">Moments like this, forever please 🌸</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/You make everything better.jpg" alt="Cute moment 26" onclick="openFullscreen(this.src)">
+      <div class="caption">You make everything better 🌈</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Smiling because of you.jpg" alt="Cute moment 27" onclick="openFullscreen(this.src)">
+      <div class="caption">Smiling because of you 😊</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Just one more sec with you.jpg" alt="Cute moment 28" onclick="openFullscreen(this.src)">
+      <div class="caption">Just one more second with you 🤍</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/A little love, a lot of us.jpg" alt="Cute moment 29" onclick="openFullscreen(this.src)">
+      <div class="caption">A little love, a lot of us 💕</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/If this isn’t magic, what is.jpg" alt="Cute moment 30" onclick="openFullscreen(this.src)">
+      <div class="caption">If this isn’t magic, what is? 🪄</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Can’t stop looking at you.jpg" alt="Cute moment 31" onclick="openFullscreen(this.src)">
+      <div class="caption">Can’t stop looking at you 😍</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Every photo, a piece of my heart .jpg" alt="Cute moment 32"
+        onclick="openFullscreen(this.src)">
+      <div class="caption">Every photo, a piece of my heart ❤️‍🔥</div>
+    </div>
+
+    <div class="photo-card">
+      <video src="assets/Videos/Holding_Hands.mp4" class="hover-video" loop preload="metadata" controls
+        onmouseover="this.play()" onmouseout="this.pause()"></video>
+      <div class="caption">Hold my hand, forever 👩‍❤️‍👨</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Stolen glances and soft giggles.jpg" alt="Cute moment 34"
+        onclick="openFullscreen(this.src)">
+      <div class="caption">Stolen glances and soft giggles 😚</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/You are my favourite person.jpg" alt="Cute moment 35" onclick="openFullscreen(this.src)">
+      <div class="caption">You’re my favorite person 🫶</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/When love looks this cute.jpg" alt="Cute moment 36" onclick="openFullscreen(this.src)">
+      <div class="caption">When love looks this cute 💘</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/A picture full of love .jpg" alt="Cute moment 37" onclick="openFullscreen(this.src)">
+      <div class="caption">A picture full of love 📷💕</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Pyaar = You + Me.jpg" alt="Cute moment 38" onclick="openFullscreen(this.src)">
+      <div class="caption">Pyaar = You + Me 💑</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/This one's framed in my heart.jpg" alt="Cute moment 39"
+        onclick="openFullscreen(this.src)">
+      <div class="caption">This one's framed in my heart 🖼️</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Me with the love of my life.jpg" alt="Cute moment 40" onclick="openFullscreen(this.src)">
+      <div class="caption">Me with the love of my life 💗</div>
+    </div>
+
+
+    <div class="photo-card">
+      <video src="assets/Videos/Every little moment matters.mp4" class="hover-video" loop preload="metadata" controls
+        onmouseover="this.play()" onmouseout="this.pause()"></video>
+      <div class="caption">Every little moment matters 💭</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/You complete my frame.jpg" alt="Cute moment 42" onclick="openFullscreen(this.src)">
+      <div class="caption">You complete my frame 🖼️❤️</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/From giggles to goofy faces.jpg" alt="Cute moment 43" onclick="openFullscreen(this.src)">
+      <div class="caption">From giggles to goofy faces 😆</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/That soft blush on your cheeks.jpg" alt="Cute moment 44"
+        onclick="openFullscreen(this.src)">
+      <div class="caption">That soft blush on your cheeks 🥰</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/One word Perfect.jpg" alt="Cute moment 45" onclick="openFullscreen(this.src)">
+      <div class="caption">One word: Perfect 💯</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Sweet choas together.jpg" alt="Cute moment 46" onclick="openFullscreen(this.src)">
+      <div class="caption">Sweet chaos together 🍬</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/The way we laugh, love & live.jpg" alt="Cute moment 47"
+        onclick="openFullscreen(this.src)">
+      <div class="caption">The way we laugh, love & live 🧡</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Our little forever.jpg" alt="Cute moment 48" onclick="openFullscreen(this.src)">
+      <div class="caption">Our little forever 💍</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="assets/images/Your eyes says it all.jpg" alt="Cute moment 49" onclick="openFullscreen(this.src)">
+      <div class="caption">Your eyes say it all 👀❤️</div>
+    </div>
+
+  </div>
+
+  <!-- Fullscreen Viewer -->
+  <div id="fullscreenView" class="fullscreen" style="display: none;" onclick="closeFullscreen()">
+    <img id="fullscreenImg" src="">
+  </div>
+
+  <!-- Romantic Background Music -->
+  <audio id="bgMusic" src="https://cdn.pixabay.com/audio/2023/04/14/audio_336aa3dccc.mp3" loop></audio>
+
+  <script>
+    function goBack() {
+      window.location.href = "i_love_you.html";
+    }
+
+    function openFullscreen(src) {
+      const fullscreen = document.getElementById('fullscreenView');
+      const img = document.getElementById('fullscreenImg');
+      img.src = src;
+      fullscreen.style.display = 'flex';
+    }
+
+    function closeFullscreen() {
+      document.getElementById('fullscreenView').style.display = 'none';
+    }
+
+    // Play music only on first interaction
+    document.addEventListener('click', () => {
+      const audio = document.getElementById('bgMusic');
+      audio.play().catch(() => { });
+    }, { once: true });
+  </script>
+</body>
+
+</html>

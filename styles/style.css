@@ -1,0 +1,71 @@
+/* Reset some basics */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Indie Flower', cursive;
+  background-color: #fff6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Container Styling */
+.container {
+  background-color: #ffeef0;
+  border: 3px solid #ff7c94;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(255, 120, 150, 0.4);
+  max-width: 700px;
+  width: 90%;
+}
+
+/* Heading */
+h1 {
+  color: #ff4f6d;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+/* Capoo Image */
+.capoo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Buttons */
+.btn {
+  padding: 15px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(255, 105, 135, 0.2);
+}
+
+.btn.yes {
+  background-color: #ff6b81;
+  color: white;
+}
+
+.btn.no {
+  background-color: #ff4f6d;
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 105, 135, 0.3);
+}

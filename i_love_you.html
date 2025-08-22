@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I Love You 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fff5f5;
+      font-family: 'Indie Flower', cursive;
+      overflow: hidden;
+    }
+
+    .gallery-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #ff6b81;
+      color: white;
+      font-family: 'Indie Flower', cursive;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: 2px solid #ff6b81;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 107, 129, 0.3);
+      z-index: 2;
+    }
+
+    .gallery-button:hover {
+      background-color: white;
+      color: #ff6b81;
+    }
+
+    .background-text {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      white-space: pre-line;
+      color: #ff6b81;
+      font-size: 20px;
+      line-height: 1.8;
+      text-align: center;
+      animation: scrollText 120s linear infinite;
+      z-index: 0;
+      padding-left: 60px; /* shifts it to the right */
+      max-width: 90vw;
+    }
+
+    @keyframes scrollText {
+      0% { top: 100%; }
+      100% { top: -1000%; }
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 42px;
+      color: #ff6b81;
+      margin-bottom: 20px;
+    }
+
+    .content img {
+      width: 220px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .footer-text {
+      font-size: 28px;
+      color: #ff6b81;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="gallery-button" onclick="openGallery()">Our Cute Moments 📸</button>
+
+  <div class="content">
+    <h1>I love you my sweetheart 💖</h1>
+    <img src="https://media.tenor.com/efbi1EpFlVUAAAAi/bugcat-capoo.gif" alt="Capoo GIF">
+    <div class="footer-text">She said YES! 💍</div>
+  </div>
+
+  <div class="background-text" id="loveLanguages"></div>
+
+  <audio id="bgMusic" src="https://cdn.pixabay.com/audio/2022/03/15/audio_bf6dc49b53.mp3" autoplay loop></audio>
+
+  <script>
+    function openGallery() {
+      window.location.href = "gallery.html";
+    }
+
+    window.onload = () => {
+      const box = document.getElementById('loveLanguages');
+const lines = [
+  "Iloveyou (English)",
+  "मैं तुमसे प्यार करता हूँ (Hindi)",
+  "Teamo (Spanish)",
+  "Jet’aime (French)",
+  "Ichliebedich (German)",
+  "Tiamo (Italian)",
+  "Euteamo (Portuguese)",
+  "Ятебялюблю (Russian)",
+  "我爱你 (Chinese - Mandarin)",
+  "愛してる (Japanese)",
+  "사랑해 (Korean)",
+  "أحبك (Arabic)",
+  "Seniseviyorum (Turkish)",
+  "Ikhouvanjou (Dutch)",
+  "Σ’αγαπώ (Greek)",
+  "ฉันรักคุณ (Thai)",
+  "אניאוהבאותך/אניאוהבתאותך (Hebrew)",
+  "Kochamcię (Polish)",
+  "Jagälskardig (Swedish)",
+  "Rakastansinua (Finnish)",
+  "Teiubesc (Romanian)",
+  "Milujiťě (Czech)",
+  "Szeretlek (Hungarian)",
+  "Ятебелюблю (Ukrainian)",
+  "Anhyêuem/Emyêuanh (Vietnamese)",
+  "আমিতোমায়ভালোবাসি (Bengali)",
+  "நான்உன்னைக்காதலிக்கிறேன் (Tamil)",
+  "నెనునిన్నుప్రేమిస్తున్నాను (Telugu)",
+  "ನಾನುನಿನ್ನಪ್ರೀತಿಸುತ್ತೇನೆ (Kannada)",
+  "હુંતનેપ્રેમકરુંછું (Gujarati)",
+  "मीतुझ्यावरप्रेमकरतो (Marathi)",
+  "میںتمسےمحبتکرتاہوں (Urdu)",
+  "Akucintakamu (Indonesian)",
+  "Sayacintapadamu (Malay)",
+  "Nakupenda (Swahili)",
+  "Mahalkita (Filipino)",
+  "မင်္ဂလာပါ (Burmese)",
+  "मतिमीलाईमायागर्छु (Nepali)",
+  "මමඔබටආදරෙයි (Sinhala)",
+  "Ekhetjoulief (Afrikaans)",
+  "Maitezaitut (Basque)",
+  "T’estimo (Catalan)",
+  "Volimte (Croatian)",
+  "Волимте (Serbian)",
+  "Volimte (Bosnian)",
+  "Ľúbiťťa (Slovak)",
+  "Ljubimte (Slovenian)",
+  "Estevimīlu (Latvian)",
+  "Aštavemyliu (Lithuanian)",
+  "Maarmastansind (Estonian)",
+  "Mwenrenmenou (HaitianCreole)",
+  "Tiakoianao (Malagasy)",
+  "እወድሃለሁ (Amharic)",
+  "دوستتدارم (Persian)",
+  "Ezhejtedikim (Kurdish)",
+  "زهتاسرهمینهلرم (Pashto)",
+  "Mensənisevirəm (Azerbaijani)",
+  "Եսսիրումեմքեզ (Armenian)",
+  "მიყვარხარ (Georgian)",
+  "Менсенісүйемін (Kazakh)",
+  "Mensenisevaman (Uzbek)",
+  "Mensenisöýýärin (Turkmen)",
+  "Бичамдхайртай (Mongolian)",
+  "ང་ཁྱེད་ལ་དགའ་པོ་ཡོད་ (Tibetan)",
+  "ຂ້ອຍຮັກເຈົ້າ (Lao)",
+  "ខ្ញុំស្រលាញ់អ្នក (Khmer)",
+  "Quérote (Galician)",
+  "‘Rwy’ndygarudi (Welsh)",
+  "Taimi’ngralet (Irish)",
+  "Thagaolagamort (ScottishGaelic)",
+  "Arohaahaukiakoe (Maori)",
+  "Outealofaiateoe (Samoan)",
+  "‘Okuou‘ofa‘iakoe (Tongan)",
+  "Audomoniiko (Fijian)",
+  "Uaherevauiaoe (Tahitian)",
+  "Alohawauia‘oe (Hawaiian)",
+  "Nagligivagit (Inuktitut)",
+  "Gizahgin (Ojibwe)",
+  "Nimitztlazohtla (Nahuatl)",
+  "Kuyayki (Quechua)",
+  "Nayaruñt’smawa (Aymara)",
+  "Ngiyakuthanda (Zulu)",
+  "Ndiyakuthanda (Xhosa)",
+  "Kearata (Sesotho)",
+  "Keagorata (Tswana)",
+  "Ahụrụmgịn’anya (Igbo)",
+  "Monifẹrẹ (Yoruba)",
+  "Inasonku (Hausa)",
+  "Waankujeclahay (Somali)",
+  "Miamasvin (Esperanto)",
+  "Teamo (Latin)",
+  "त्वांकामये (Sanskrit)",
+  "Piyāmitumhe (Pali)",
+  "Ndimakukonda (Chichewa)",
+  "ከምዚፍቕሪእየ (Tigrinya)",
+  "মইতোমাকভালপাঁও (Assamese)",
+  "हांवतुजेरमोगकरतां (Konkani)",
+  "Angmwjangmwthwn (Bodo)",
+  "Einanangbunungshi (Meitei)",
+  "Ingamingkhodobabon (Santali)"
+];
+      let text = '';
+      for (let i = 0; i < 100; i++) {
+        text += (i + 1) + '. ' + lines[i % lines.length] + '\n';
+      }
+      box.innerText = text;
+
+      document.body.addEventListener("click", () => {
+        document.getElementById("bgMusic").play().catch(() => {});
+      }, { once: true });
+    };
+  </script>
+</body>
+</html>
